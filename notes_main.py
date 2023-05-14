@@ -28,13 +28,13 @@ class Player(GameSprite):
             self.rect.y += self.speed
 
 font.init()
-font1 = font.Font(None, 30)
+font1 = font.SysFont('Calibri', 30)
 win = display.set_mode((700, 500))
-lose1 = font1.render('Поражение! Игрок 1 проиграл...', True, (0, 0, 0))
-lose2 = font1.render('Поражение! Игрок 2 проиграл...', True, (0, 0, 0))
+lose1 = font1.render('Поражение! Игрок 1 проиграл...', True, (255, 255, 255))
+lose2 = font1.render('Поражение! Игрок 2 проиграл...', True, (255, 255, 255))
 
 user1 = Player('rocket1.png', 30, 200, 10, 80, 100)
-user2 = Player('rocket3.png', 600, 200, 10, 80, 100)
+user2 = Player('rocket2.png', 600, 200, 10, 80, 100)
 ball = GameSprite('machik.png', 300, 200, 10, 20, 20)
 
 display.set_caption("Пинг Понг")
@@ -46,8 +46,8 @@ win.fill(background)
 game_over = True
 finish = False
 
-speed_x = 4
-speed_y = 6
+speed_x = 5
+speed_y = 8
 
 while game_over:
     for e in event.get():
@@ -89,8 +89,8 @@ while game_over:
         finish = False
         ball.rect.x = 300
         ball.rect.y = 200
-        speed_x = 4
-        speed_y = 4
+        speed_x = 5
+        speed_y = 8
         user1.rect.y = 200
         user2.rect.y = 200
         time.delay(3000)
